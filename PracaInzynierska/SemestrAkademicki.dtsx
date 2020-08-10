@@ -1,0 +1,544 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/28/2020 10:42:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-6KBDTQ0"
+  DTS:CreatorName="DESKTOP-6KBDTQ0\Gosia"
+  DTS:DTSID="{DB90763E-1E7D-4AB4-AA29-527E5F3734B9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="SemestrAkademicki"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{EC8196F2-8121-4237-AF9F-4B77E6197A47}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.inzS16951.inzS16951]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{585DB18F-3ACA-498F-8254-3BD00C04AE4B}"
+      DTS:ObjectName="db-mssql16.pjwstk.edu.pl.inzS16951.inzS16951">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=db-mssql16.pjwstk.edu.pl;User ID=inzS16951;Initial Catalog=inzS16951;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+VR4I6cUf0mZIj4ejN06nQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABNs8hDJsLWMCKC3RdOaPeVMUfhhPNpQh0uTbsKWZTAcAAAAAAOgAAAAAIAACAAAADg5Pvxy6YoKQwyknM84D16u/T8yf7O3T1QP3u6i7IpeyAAAADt2ntSLpHx0eQGkWItYZbZHLsc6q1hMAKXcBcYdVQQJEAAAABL4RUXNcIASD5b01LUbtiFqWDbYC0LxXfIdCG+mreTJUQ4YFjKqFHLj6HqkcouXii3CG5C6NLvkzqpGQd6vTL4</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sql-ag1-listen.dziekanat_hash]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{53F06C4A-FE0E-416E-A6B1-73F631616354}"
+      DTS:ObjectName="sql-ag1-listen.dziekanat_hash">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=sql-ag1-listen;Initial Catalog=dziekanat_hash;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C6F8AFE6-DC25-4324-B973-CC4E6A9113F6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task Ładowanie Tabeli SemestrAkademicki"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination SemestrAkademicki"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SemestrAkademicki]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.inzS16951.inzS16951]"
+                  connectionManagerRefId="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.inzS16951.inzS16951]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].Columns[LatoZima]"
+                      cachedDataType="i4"
+                      cachedName="LatoZima"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[LatoZima]"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[LatoZima]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].Columns[RokAkademicki]"
+                      cachedDataType="i4"
+                      cachedName="RokAkademicki"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[RokAkademicki]"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[RokAkademicki]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].Columns[NumerSemestru]"
+                      cachedDataType="i2"
+                      cachedName="NumerSemestru"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[NumerSemestru]"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[NumerSemestru]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].Columns[NazwaSemestru]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="NazwaSemestru"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[NazwaSemestru]"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[NazwaSemestru]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].Columns[DataDo]"
+                      cachedDataType="dbDate"
+                      cachedName="DataDo"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[DataDo]"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[DataDo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].Columns[DataOd]"
+                      cachedDataType="dbDate"
+                      cachedName="DataOd"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[DataOd]"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[DataOd]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[IdSemestruAkademickiego]"
+                      dataType="i4"
+                      name="IdSemestruAkademickiego" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[NumerSemestru]"
+                      dataType="i4"
+                      name="NumerSemestru" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[NazwaSemestru]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="NazwaSemestru" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[LatoZima]"
+                      codePage="1250"
+                      dataType="str"
+                      length="10"
+                      name="LatoZima" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[RokAkademicki]"
+                      codePage="1250"
+                      dataType="str"
+                      length="10"
+                      name="RokAkademicki" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[DataOd]"
+                      dataType="dbTimeStamp"
+                      name="DataOd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input].ExternalColumns[DataDo]"
+                      dataType="dbTimeStamp"
+                      name="DataDo" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source Źródło danych dla wymiaru SemestrAkademicki"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select dbo.Nr, dbo.Nazwa, polon.semestrNr,
+polon.rokAkademicki, polon.dataStart, polon.dataStop
+From dbo.Semestr dbo inner join polon.Semestr polon on dbo.Nr = polon.Nr
+Order by dbo.Nr;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[sql-ag1-listen.dziekanat_hash]"
+                  connectionManagerRefId="Package.ConnectionManagers[sql-ag1-listen.dziekanat_hash]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[LatoZima]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[semestrNr]"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[LatoZima]"
+                      name="LatoZima"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[RokAkademicki]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[rokAkademicki]"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[RokAkademicki]"
+                      name="RokAkademicki"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[NumerSemestru]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[Nr]"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[NumerSemestru]"
+                      name="NumerSemestru"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[NazwaSemestru]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[Nazwa]"
+                      length="20"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[NazwaSemestru]"
+                      name="NazwaSemestru"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[DataDo]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[dataStop]"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[DataDo]"
+                      name="DataDo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[DataOd]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[dataStart]"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].Columns[DataOd]"
+                      name="DataOd"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[Nr]"
+                      dataType="i2"
+                      name="Nr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[Nazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Nazwa" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[semestrNr]"
+                      dataType="i4"
+                      name="semestrNr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[rokAkademicki]"
+                      dataType="i4"
+                      name="rokAkademicki" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[dataStart]"
+                      dataType="dbDate"
+                      name="dataStart" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output].ExternalColumns[dataStop]"
+                      dataType="dbDate"
+                      name="dataStop" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[semestrNr]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[semestrNr]"
+                      name="semestrNr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[rokAkademicki]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[rokAkademicki]"
+                      name="rokAkademicki" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[Nr]"
+                      dataType="i2"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[Nr]"
+                      name="Nr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[Nazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[Nazwa]"
+                      name="Nazwa" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[dataStop]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[dataStop]"
+                      name="dataStop" />
+                    <outputColumn
+                      refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[dataStart]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Error Output].Columns[dataStart]"
+                      name="dataStart" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="345,42"
+          Id="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki"
+          TopLeft="460,152" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="391,42"
+          Id="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki"
+          TopLeft="368,88" />
+        <NodeLayout
+          Size="278,42"
+          Id="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki"
+          TopLeft="398,184" />
+        <EdgeLayout
+          Id="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki.Paths[OLE DB Source Output]"
+          TopLeft="563.5,130">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.5,54"
+              Start="0,0"
+              End="-26.5,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="-4,27" />
+                  <mssgle:LineSegment
+                    End="-22.5,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,27"
+                    Point2="-26.5,27"
+                    Point3="-26.5,31" />
+                  <mssgle:LineSegment
+                    End="-26.5,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Source Źródło danych dla wymiaru SemestrAkademicki">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task Ładowanie Tabeli SemestrAkademicki\OLE DB Destination SemestrAkademicki">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
